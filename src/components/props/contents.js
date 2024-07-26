@@ -1,5 +1,5 @@
 import image1 from '../contents/image/service/background.webp';
-import image2 from '../contents/image/room.webp';
+import image2 from '../contents/image/gettyimages-min.jpg';
 import image3 from '../contents/image/blog/background-min.jpeg';
 import image4 from '../contents/image/review.webp';
 import image6 from '../contents/image/service/services _corporate travel management.webp';
@@ -27,7 +27,7 @@ const contents = [
   {
     id: 2,
     title: "About us",
-    subTitle: "we are Nigeria’s Premier Indigenous Travel Consolidator",
+    subTitle: "We are Nigeria’s Premier Indigenous Travel Consolidator",
     // subTitle2: null,
     riteContent: "Established in 2006 as a travel agency, Finchglow Travels is now Nigeria’s foremost travel consolidator.",
     imgURL: image2,

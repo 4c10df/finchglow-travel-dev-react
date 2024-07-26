@@ -52,7 +52,7 @@ function Main() {
               What We Do
             </span>
             <h3 data-aos="fade-up" className="text-[#101828] lg:w-[689px]">
-              We are the leading travel Consolidator in Nigeria’s travel
+              We are the leading travel consolidator in Nigeria’s travel
               industry.
             </h3>
           </div>

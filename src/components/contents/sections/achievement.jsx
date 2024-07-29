@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import FadeLink from "../fadeLink";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/_count.css";
@@ -52,12 +52,12 @@ const AchievementsSection = () => {
               worked with over 20,000 clients, dedicating ourselves to
               exceptional service and customer satisfaction.
             </p>
-            <FadeLink to="/finchglow-travels-story">
+            <Link to="/finchglow-travels-story">
               <span className="arrow !text-[#0260EE]">
                 Learn more
                 <img src={icon} alt="" />
               </span>
-            </FadeLink>
+            </Link>
           </div>
 
           <div className="grid at594:grid-cols-2 gap-y-[100px] items-start gap-x-[32px] w-full">

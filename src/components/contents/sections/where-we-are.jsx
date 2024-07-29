@@ -2,10 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import ImageMap from "../image/Vector squre.webp";
-import ImageLayer from "../image/Layer_1.webp";
+import ImageLayer from "../image/Vector squre.webp";
+import ImageMap from "../image/Layer_1.webp";
 import icon from "../image/icons/arrow-up-min.png";
-import FadeLink from "../fadeLink";
+import { Link } from "react-router-dom";
+import LoadBlurHashImage from "../../lazy/loadBlurHash";
 
 const SectionWhereWeAre = () => {
   useEffect(() => {
@@ -36,26 +37,28 @@ const SectionWhereWeAre = () => {
               offices in key locations in Lagos, Port Harcourt, Kano and Abuja.
             </span>
 
-            <FadeLink to="/contact-us">
+            <Link to="/contact-us">
               <span className="arrow !text-[#0260EE]">
                 Contact us
                 <img src={icon} alt="" />
               </span>
-            </FadeLink>
+            </Link>
           </div>
 
           <div className="relative flex justify-center items-end w-full">
             <div className="relative flex flex-col justify-center items-end w-full">
-              <img
-                src={ImageMap}
+              <LoadBlurHashImage
+                src={ImageLayer}
+                blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
                 className="absolute right-[-26px] bottom-[-56px] md:w-[691.5px] h-auto md:h-[590.5px] object-cover"
-                alt=""
+                alt="Map Background"
               />
               <div className="p-5 z-[33]">
-                <img
-                  src={ImageLayer}
+                <LoadBlurHashImage
+                  src={ImageMap}
+                  blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
                   className="w-full md:w-[646.5px] h-auto md:h-[524.5px] object-cover"
-                  alt=""
+                  alt="Map"
                 />
               </div>
             </div>

@@ -6,14 +6,14 @@ import Cards from "../slider/cards";
 import AchievementsSection from "./sections/achievement";
 import SectionWhereWeAre from "./sections/where-we-are";
 import BlogSlide from "../slider/blog_cards";
-import FAQ from "./sections/FAQ";
+import FAQ from "./FAQ";
 import OurPartners from "../testimonial/partners";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import TestimonialSlider from "../testimonial/testimonial";
 import background from "./image/blue-background.webp";
 import Button from "./Button";
-import FadeLink from "./fadeLink";
+import { Link } from "react-router-dom";
 import SectionPartner from "./sections/partner";
 
 function createRoundText(content) {
@@ -88,14 +88,14 @@ function Main() {
                 tales and insider tips.
               </span>
               <div>
-                <NavLink to="/">
+                < Link  to="/">
                   <Button
                     size="medium"
                     className=" shadow-[#1018280D] !border-[#0260EE] !border-solid !border-[1px] !w-[122px] !h-[48px] text-[#05284C]"
                   >
                     Go to blog
                   </Button>
-                </NavLink>
+                </ Link >
               </div>
             </div>
           </div>

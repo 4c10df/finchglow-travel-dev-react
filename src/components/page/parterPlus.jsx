@@ -15,6 +15,7 @@ import background from "../contents/image/blue-background - Copy.webp";
 import EpisodesSlide from "../slideEpisode/prevEpisodes";
 import ZohoOptinForm from "../form/zohoOptinForm";
 import OverlayForm from "../form/overlayForm";
+import LoadBlurHashImage from "../lazy/loadBlurHash";
 
 // go to props to input contents for the ones u can't input here
 
@@ -221,9 +222,10 @@ function PartnerPlusConnect() {
               </div>
 
               <div className="relative flex justify-end items-end w-full h-auto  mb-[30px] lg:mb-0 lg:h-[561px] ">
-                <img
+                <LoadBlurHashImage
                   src={image2}
-                  className="w-full lg:w-[478px] h-full object-cover"
+                  blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                  className="w-full lg:w-[478px] h-full lg:h-[561px] object-cover"
                   alt="Duty calls"
                 />
               </div>

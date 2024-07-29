@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import LoadBlurHashImage from '../lazy/loadBlurHash';
 
 
 
@@ -24,7 +24,7 @@ function TicketingSupport(props) {
         <div className="flex flex-col-reverse lg:flex-row justify-between w-full h-auto">
           <div className="relative flex flex-col justify-center items-start gap-[20px] w-full h-auto text-left">
             <h3 className="text-[#05284C] mb-[20px]">{props.title}</h3>
-            
+
             <div className="relative flex justify-start items-start gap-[20px] w-full h-auto text-left">
               <span className="pb-[7px] w-[20px] h-[20px]">
                 <img
@@ -35,7 +35,7 @@ function TicketingSupport(props) {
                   alt=""
                 />
               </span>
-              
+
               <div className="flex flex-col justify-start items-start gap-[10px] text-left w-full silver:w-[366px]">
                 <span
                   data-aos="fade-up"
@@ -64,7 +64,7 @@ function TicketingSupport(props) {
                   alt=""
                 />
               </span>
-              
+
               <div className="flex flex-col justify-center items-start gap-[10px] text-left w-full silver:w-[366px]">
                 <span
                   data-aos="fade-up"
@@ -84,7 +84,6 @@ function TicketingSupport(props) {
             </div>
 
             <div className="relative flex justify-start items-start gap-[20px] w-full h-auto text-left">
-                
               <span className="pb-[7px] w-[20px] h-[20px]">
                 <img
                   data-aos="fade-up"
@@ -94,7 +93,7 @@ function TicketingSupport(props) {
                   alt=""
                 />
               </span>
-              
+
               <div className="flex flex-col justify-center items-start gap-[10px] text-left w-full silver:w-[366px]">
                 <span
                   data-aos="fade-up"
@@ -112,8 +111,10 @@ function TicketingSupport(props) {
                 </span>
               </div>
             </div>
-            
-            <div className={`relative flex justify-start items-start gap-[20px] w-full h-auto text-left  ${isTravelPackagesPage ? 'block '  : 'hidden'}`}>
+
+            <div
+              className={`relative flex justify-start items-start gap-[20px] w-full h-auto text-left  ${isTravelPackagesPage ? "block " : "hidden"}`}
+            >
               <span className="pb-[7px] w-[20px] h-[20px]">
                 <img
                   data-aos="fade-up"
@@ -123,7 +124,7 @@ function TicketingSupport(props) {
                   alt=""
                 />
               </span>
-              
+
               <div className="flex flex-col justify-center items-start gap-[10px] text-left w-full silver:w-[366px]">
                 <span
                   data-aos="fade-up"
@@ -142,17 +143,18 @@ function TicketingSupport(props) {
               </div>
             </div>
 
-            <div className={`relative flex justify-start items-start gap-[20px] w-full h-auto text-left ${isTravelPackagesPage ? 'block'  : 'hidden'}`}>
-                
+            <div
+              className={`relative flex justify-start items-start gap-[20px] w-full h-auto text-left ${isTravelPackagesPage ? "block" : "hidden"}`}
+            >
               <span className="pb-[7px] w-[20px] h-[20px]">
                 <img
                   data-aos="fade-up"
                   data-aos-anchor-placement="top-bottom"
                   src={props.imgURL}
-                  className='h-auto w-full object-cover'
+                  className="h-auto w-full object-cover"
                 />
               </span>
-              
+
               <div className="flex flex-col justify-center items-start gap-[10px] text-left w-full silver:w-[366px]">
                 <span
                   data-aos="fade-up"
@@ -169,15 +171,16 @@ function TicketingSupport(props) {
                   {props.details5}
                 </span>
               </div>
-            </div>          
-            
+            </div>
           </div>
 
           <div className="relative flex justify-end items-center w-full h-auto mb-[30px] lg:mb-0 overflow-hidden">
-            <img
-              src={props.imgURL1} 
+            
+            <LoadBlurHashImage
+              src={props.imgURL1}
+              blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
               className="w-full lg:w-[478px] h-[300px] lg:h-[561px] object-cover"
-              alt=""
+              alt="Affiliate Programs"
             />
           </div>
         </div>

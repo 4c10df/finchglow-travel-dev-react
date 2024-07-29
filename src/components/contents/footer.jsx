@@ -10,7 +10,7 @@ import {
 import logo from "./image/logo/FT_logo_X5-01.png";
 import logo1 from "./image/logo/Accredited Agent logo.png";
 import logo2 from "./image/logo/NDPR.png";
-import FadeLink from "./fadeLink";
+import { Link } from "react-router-dom";
 
 import "../contents/styles/_footer.css";
 
@@ -79,41 +79,41 @@ function footer() {
               <div className="w-full md:w-[176.5px]">
                 <ul className=" md:flex flex-col justify-center items-start text-left gap-[12px]">
                   <li>
-                    <FadeLink to="/about-finchglow-travels">
+                    <Link to="/about-finchglow-travels">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         About us
                       </span>
-                    </FadeLink>
+                    </Link>
                   </li>
                   <li>
-                    <FadeLink to="/affiliate-programme">
+                    <Link to="/affiliate-programme">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Affiliate Programs
                       </span>
-                    </FadeLink>
+                    </Link>
                   </li>
 
                   <li>
-                    <FadeLink to="/Corporate-travel-management">
+                    <Link to="/Corporate-travel-management">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Corporate Travel Management
                       </span>
-                    </FadeLink>
+                    </Link>
                   </li>
                   <li>
-                    <FadeLink to="/customised-travel-packages">
+                    <Link to="/customised-travel-packages">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Customized Travel Packages
                       </span>
-                    </FadeLink>
+                    </Link>
                   </li>
 
                   {/* <li>
-                    <FadeLink to="">
+                    < Link  to="">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Products
                       </span>
-                    </FadeLink>
+                    </ Link >
                   </li> */}
                 </ul>
               </div>
@@ -121,60 +121,60 @@ function footer() {
               <div className="w-full md:w-[176.5px]">
                 <ul className=" md:flex flex-col justify-center items-start text-left gap-[12px]">
                   <li>
-                    <FadeLink to="/ancillary-services">
+                    <Link to="/ancillary-services">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Ancillary Services
                       </span>
-                    </FadeLink>
+                    </Link>
                   </li>
                   <li>
-                    <FadeLink to="/visa-and-immigration-services">
+                    <Link to="/visa-and-immigration-services">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Visa and Immigration Services
                       </span>
-                    </FadeLink>
+                    </Link>
                   </li>
                   <li>
-                    <FadeLink to="/partnerplus-connect">
+                    <Link to="/partnerplus-connect">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         PartnerPlus Connect
                       </span>
-                    </FadeLink>
+                    </Link>
                   </li>
                   {/* <li>
-                    <FadeLink to="/blog-home">
+                    < Link  to="/blog-home">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Blog
                       </span>
-                    </FadeLink>
+                    </ Link >
                   </li> */}
                   {/* <li>
-                    <FadeLink to="">
+                    < Link  to="">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Newsletter
                       </span>
-                    </FadeLink>
+                    </ Link >
                   </li> */}
                   <li>
-                    <FadeLink to="/contact-us">
+                    <Link to="/contact-us">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Contact us
                       </span>
-                    </FadeLink>
+                    </Link>
                   </li>
                   {/* <li>
-                    <FadeLink to="">
+                    < Link  to="">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         FAQ
                       </span>
-                    </FadeLink>
+                    </ Link >
                   </li> */}
                   {/* <li>
-                    <FadeLink to="">
+                    < Link  to="">
                       <span className="font-medium font-Metropolis text-[16px] leading-[24px] text-[#506982] hover:text-[#ED3237]">
                         Testimonials
                       </span>
-                    </FadeLink>
+                    </ Link >
                   </li> */}
                 </ul>
               </div>

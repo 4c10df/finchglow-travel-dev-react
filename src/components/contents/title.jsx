@@ -1,16 +1,16 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import LazyBlurHashImage from "../lazy/LazyBlurHashImage";
 import "aos/dist/aos.css";
-
-
-
-// check for contents in contentProps folder
 
 function Title(props) {
   const location = useLocation();
   const isBlogPage = location.pathname === "/blog-home";
   const isContactPage = location.pathname === "/contact-us";
   const isBlogPostPage = location.pathname === "/blog-read";
+
+  // const blurHash = "LEHV6nWB2yk8pyo0adR*.7kCMdnj";
+  // const parallaxStrength = 500; // Adjust this value as needed
 
   return (
     <section className="relative bg-[#EEF5FF] flex flex-col justify-center items-center w-full overflow-hidden">
@@ -21,12 +21,20 @@ function Title(props) {
               {props.title}
             </span>
             <h3
-              className={`text-[#101828]  ${isBlogPage ? "lg:!w-[513px]" : isContactPage ? "lg:!w-[396px]" : "xl:w-[595px]"}`}
+              className={`text-[#101828] ${
+                isBlogPage
+                  ? "lg:!w-[513px]"
+                  : isContactPage
+                    ? "lg:!w-[396px]"
+                    : "xl:w-[595px]"
+              }`}
             >
               {props.subTitle}
             </h3>
             <span
-              className={`text-[#697E94] txt2 !leading-[26px] xl:w-[407px]  ${isBlogPostPage ? "block" : "hidden"}`}
+              className={`text-[#697E94] txt2 !leading-[26px] xl:w-[407px] ${
+                isBlogPostPage ? "block" : "hidden"
+              }`}
             >
               {props.subTitle2}
             </span>
@@ -41,6 +49,23 @@ function Title(props) {
           </div>
         </div>
       </div>
+      {/* <LazyBlurHashImage
+        className={`!h-[474px] !py-[90px] w-full !overflow-hidden ${
+          isContactPage ? "hidden" : "block"
+        }`}
+        src={props.imgURL} // Calling the imgURL function
+        blurHash={blurHash}
+        alt="Descriptive alt text"
+        parallaxStrength={parallaxStrength}
+      /> */}
+
+      {/* <LazyBlurHashImage
+        className={`relative flex flex-col justify-center items-center bg-no-repeat bg-cover bg-top !h-[474px] !py-[90px] w-full overflow-hidden ${isContactPage ? "hidden" : "block"}`}
+        style={{ backgroundImage: `url(${props.imgURL})` }}
+        // src={props.imgURL}
+        blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+        alt="Descriptive alt text"
+      /> */}
       <div
         className={`relative flex flex-col justify-center items-center at500:bg-fixed bg-no-repeat bg-cover bg-top h-[474px] py-[90px] w-full overflow-hidden  ${isContactPage ? "hidden" : "block"}`}
         style={{ backgroundImage: `url(${props.imgURL})` }}

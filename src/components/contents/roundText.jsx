@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import FadeLink from "./fadeLink";
+import { Link } from "react-router-dom";
 
 function RoundText(props) {
   const location = useLocation();
@@ -56,7 +56,7 @@ function RoundText(props) {
                 {props.description4}
               </span>
             </div>
-            <FadeLink to={props.LinkText}>
+            <Link to={props.LinkText}>
               <span
                 data-aos="fade-up"
                 className={`arrow !text-[#0260EE] ${location.pathname === "/" ? "" : "!hidden"}`}
@@ -64,7 +64,7 @@ function RoundText(props) {
                 {props.buttonText}
                 <FaArrowRight />
               </span>
-            </FadeLink>
+            </Link>
           </div>
         </div>
       </div>

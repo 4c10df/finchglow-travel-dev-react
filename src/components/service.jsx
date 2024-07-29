@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import FadeLink from "./contents/fadeLink";
+import { Link } from "react-router-dom";
 import Title from "./contents/title";
 import contents from "./props/contents";
 import Nav from "./navigation/nav";
@@ -19,6 +19,7 @@ import icons4 from "./contents/image/icons/Group 784-min.png";
 import image5 from "./contents/image/service/Our services visa & immigration .webp";
 import icons5 from "./contents/image/icons/Group 785-min.png";
 import OverlayForm from "./form/overlayForm";
+import LoadBlurHashImage from "./lazy/loadBlurHash";
 
 // import LogInForm from "./form/logIn";
 
@@ -75,10 +76,16 @@ function Service() {
           <div className="static w-full flex flex-col justify-center items-center  2xl:w-[1280px] px-[15px] py-[55px] lg:py-[200px]  at500:px-[64px] md:pr-[64px] md:pl-[94px] my-0 mx-auto">
             <div className="flex flex-col lg:flex-row justify-between items-center  w-full h-auto ">
               <div className="relative lg:bottom-[-78px] flex justify-start items-start w-full h-auto mb-[30px] lg:mb-0 ">
-                <img
+                {/* <img
                   src={image1}
                   className=" bg-gray-500 w-full h-[300px] lg:w-[559px] lg:h-[656px] object-cover"
                   alt=""
+                /> */}
+                <LoadBlurHashImage
+                  src={image1}
+                  blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                  className="bg-gray-500 w-full h-[300px] lg:w-[559px] lg:h-[656px] object-cover"
+                  alt="Affiliate Programs"
                 />
               </div>
 
@@ -115,12 +122,12 @@ function Service() {
                     our esteemed affiliate program, Trade Partner Plus, and say
                     hello to a tomorrow of limitless possibilities.
                   </span>
-                  <FadeLink to="/affiliate-programme">
+                  <Link to="/affiliate-programme">
                     <span data-aos="fade-up" className="arrow !text-[#0260EE]">
                       Why Partner With Us
                       <FaArrowRight />
                     </span>
-                  </FadeLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -175,19 +182,25 @@ function Service() {
                   That's where we come in – your dedicated travel partner
                   committed to transforming how your team travels.
                 </span>
-                <FadeLink to="/Corporate-travel-management">
+                <Link to="/Corporate-travel-management">
                   <span data-aos="fade-up" className="arrow !text-[#0260EE]">
                     Why Choose Us
                     <FaArrowRight />
                   </span>
-                </FadeLink>
+                </Link>
               </div>
 
               <div className="relative lg:bottom-[-85px] flex justify-end items-end w-full h-auto mb-[30px] lg:mb-0">
-                <img
+                {/* <img
                   src={image2}
                   className="w-full h-auto lg:w-[457px] lg:h-[589px] object-cover"
                   alt=""
+                /> */}
+                <LoadBlurHashImage
+                  src={image2}
+                  blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                  className="w-full h-auto lg:w-[457px] lg:h-[589px] object-cover"
+                  alt="Affiliate Programs"
                 />
               </div>
             </div>
@@ -199,10 +212,11 @@ function Service() {
           <div className="static w-full flex flex-col justify-center items-center  2xl:w-[1280px] px-[15px] at500:px-[64px] py-[55px] lg:pt-[200px] lg:pb-0 md:pl-[94px] md:pr-[64px] lg:pl-0 my-0 mx-auto">
             <div className="flex flex-col lg:flex-row justify-between items-center  w-full">
               <div className="relative w-full h-auto mb-[30px] lg:mb-0">
-                <img
+                <LoadBlurHashImage
                   src={image3}
-                  className="bg-gray-500 w-full h-auto lg:w-[623px] lg:h-[656px] object-cover"
-                  alt=""
+                  blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                  className="w-full h-auto lg:w-[623px] lg:h-[656px] object-cover"
+                  alt="Affiliate Programs"
                 />
               </div>
 
@@ -250,12 +264,12 @@ function Service() {
                     needs, whether leisurely getaways or strategic business
                     ventures.
                   </span>
-                  <FadeLink to="/customised-travel-packages">
+                  <Link to="/customised-travel-packages">
                     <span data-aos="fade-up" className="arrow !text-[#0260EE]">
                       Why Choose Us
                       <FaArrowRight />
                     </span>
-                  </FadeLink>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -311,19 +325,20 @@ function Service() {
                   services – the perfect companions to enrich your travel
                   experience like never before.
                 </span>
-                <FadeLink to="/ancillary-services">
+                <Link to="/ancillary-services">
                   <span data-aos="fade-up" className="arrow !text-[#0260EE]">
                     Why Choose Our Ancillary Services
                     <FaArrowRight />
                   </span>
-                </FadeLink>
+                </Link>
               </div>
 
               <div className="relative flex justify-end items-end w-full h-auto mb-[30px] lg:mb-0">
-                <img
+                <LoadBlurHashImage
                   src={image4}
-                  className=" bg-gray-500 w-full h-auto lg:w-[538px] lg:h-[689px] object-cover"
-                  alt=""
+                  blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                  className=" w-full h-auto lg:w-[538px] lg:h-[689px] object-cover"
+                  alt="Affiliate Programs"
                 />
               </div>
             </div>
@@ -335,10 +350,11 @@ function Service() {
           <div className="static w-full flex flex-col justify-center items-center  2xl:w-[1280px] px-[15px] py-[70px]  at500:px-[64px] md:pr-[64px] md:pl-[94px] my-0 mx-auto">
             <div className="flex flex-col lg:flex-row justify-between items-center  w-full h-auto ">
               <div className="relative  flex justify-start items-start w-full h-auto mb-[30px] lg:mb-0 ">
-                <img
+                <LoadBlurHashImage
                   src={image5}
-                  className=" bg-gray-500 w-full h-[300px] lg:w-[559px] lg:h-[656px] object-cover"
-                  alt=""
+                  blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                  className="w-full h-[300px] lg:w-[559px] lg:h-[656px] object-cover"
+                  alt="Affiliate Programs"
                 />
               </div>
 
@@ -377,12 +393,12 @@ function Service() {
                     or travelling for work or leisure, we provide personalised
                     assistance for a smooth journey.
                   </span>
-                  <FadeLink to="/visa-and-immigration-services">
+                  <Link to="/visa-and-immigration-services">
                     <span data-aos="fade-up" className="arrow !text-[#0260EE]">
                       Why Choose Our Visa and Immigration Services?
                       <FaArrowRight />
                     </span>
-                  </FadeLink>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { IoAddCircleOutline, IoRemoveCircleOutline } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";
-import FadeLink from "../fadeLink";
+import { Link } from "react-router-dom";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import image from "../image/serious-young-african-american-female-warm-wrap-working-through-finances-night.png";
+import LoadBlurHashImage from "../lazy/loadBlurHash";
+import image from "./image/serious-young-african-american-female-warm-wrap-working-through-finances-night.png";
 
 function Faq() {
   const [toggles, setToggles] = useState([true, ...Array(5).fill(false)]);
@@ -23,7 +24,7 @@ function Faq() {
     <section className="relative bg-[#FFFFFF] flex justify-center flex-col items-center w-full h-auto">
       <div className="static w-full flex flex-col justify-center items-center 2xl:w-[1280px] px-[15px] py-[70px] at500:p4-[40px] md:px-[85px] my-0 mx-auto">
         <div className="flex flex-col md:flex-row justify-between gap-[56.89px] w-full">
-          <div className="flex flex-col justify-start items-start w-full md:w-[398.22px] gap-[40px]">
+          <div className="flex flex-col justify-start items-start w-full md:w-[443.22px] gap-[40px]">
             <div className="flex flex-col justify-start items-start gap-[17px]">
               <span
                 data-aos="fade-up"
@@ -45,8 +46,14 @@ function Faq() {
                 </strong>
               </span>
             </div>
-            <div className="w-full h-auto md:h-[448.56px] md:w-[398.22px] overflow-hidden">
-              <img src={image} className="w-full h-full object-cover" alt="" />
+            <div className="w-full h-auto md:w-[443.22px] overflow-hidden">
+              {/* <img src={image} className="w-full h-full object-cover" alt="" /> */}
+              <LoadBlurHashImage
+                src={image}
+                blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                className="w-full h-auto md:h-[448.56px] md:w-[398.22px] object-cover"
+                alt="image"
+              />
             </div>
           </div>
 
@@ -180,12 +187,12 @@ function Faq() {
                     immigration services etc. See a full breakdown of all our
                     services
                   </p>
-                  <FadeLink to="/our-services">
+                  <Link to="/our-services">
                     <span className="arrow hover:!text-[#667085]">
                       Here
                       <FaArrowRight className="mt-[4px] ml-[10px] transition-all duration-300 ease-linear" />
                     </span>
-                  </FadeLink>
+                  </Link>
                 </div>
               )}
             </div>
@@ -219,12 +226,12 @@ function Faq() {
                     across different regions. See our growing list of airline
                     partners
                   </p>
-                  <FadeLink to="/partnerplus-connect">
+                  <Link to="/partnerplus-connect">
                     <span className="arrow hover:!text-[#667085]">
                       Here
                       <FaArrowRight className="mt-[4px] ml-[10px] transition-all duration-300 ease-linear" />
                     </span>
-                  </FadeLink>
+                  </Link>
                 </div>
               )}
             </div>

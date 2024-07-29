@@ -16,7 +16,7 @@ import "./swiper/cards.css";
 import "./swiper/pagination.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import FadeLink from "../contents/fadeLink";
+import { Link } from "react-router-dom";
 
 const Slideshow = () => {
   const swiper = useSwiper();
@@ -68,12 +68,12 @@ const Slideshow = () => {
                 increase revenue.
               </p>
 
-              <FadeLink to="/affiliate-programme">
+              <Link to="/affiliate-programme">
                 <span className="arrow hover:!text-[#3580F1]">
                   Read more
                   <FaArrowRight className="fa-solid fa-arrow-right text-[#3580F1] hover:text-[#3580F1]" />
                 </span>
-              </FadeLink>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -96,12 +96,12 @@ const Slideshow = () => {
                 and hotel bookings, travel policies, expense management, and
                 dedicated support.
               </p>
-              <FadeLink to="/Corporate-travel-management">
+              <Link to="/Corporate-travel-management">
                 <span className="arrow hover:!text-[#3580F1]">
                   Read more
                   <FaArrowRight className="fa-solid fa-arrow-right text-[#3580F1] hover:text-[#3580F1]" />
                 </span>
-              </FadeLink>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -124,12 +124,12 @@ const Slideshow = () => {
                 stylish, comfortable travel that fits your budget and eases your
                 busy schedule.
               </p>
-              <FadeLink to="/customised-travel-packages">
+              <Link to="/customised-travel-packages">
                 <span className="arrow hover:!text-[#3580F1]">
                   Read more
                   <FaArrowRight className="fa-solid fa-arrow-right text-[#3580F1] hover:text-[#3580F1]" />
                 </span>
-              </FadeLink>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -149,12 +149,12 @@ const Slideshow = () => {
                 lasting memories.
               </p>
 
-              <FadeLink to="/ancillary-services">
+              <Link to="/ancillary-services">
                 <span className="arrow hover:!text-[#3580F1]">
                   Read more
                   <FaArrowRight className="fa-solid fa-arrow-right text-[#3580F1] hover:text-[#3580F1]" />
                 </span>
-              </FadeLink>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
@@ -175,12 +175,12 @@ const Slideshow = () => {
                 quotas, VIP & more!)
               </p>
 
-              <FadeLink to="/visa-and-immigration-services">
+              <Link to="/visa-and-immigration-services">
                 <span className="arrow hover:!text-[#3580F1]">
                   Read more
                   <FaArrowRight className="fa-solid fa-arrow-right text-[#3580F1] hover:text-[#3580F1]" />
                 </span>
-              </FadeLink>
+              </Link>
             </div>
           </div>
         </SwiperSlide>

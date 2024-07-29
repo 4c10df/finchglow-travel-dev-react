@@ -5,7 +5,7 @@ import { SlArrowUp, SlArrowDown, SlArrowRight } from "react-icons/sl";
 import Button from "../contents/Button";
 import logo from "./logos/finchglow-logo.png";
 import logo2 from "./logos/FT_logo_X5-01.png";
-import FadeLink from "../contents/fadeLink"; // Import the FadeLink component
+import { Link } from "react-router-dom";
 
 const Navbar = ({ openOverlay }) => {
   const [toggle, setToggle] = useState(false);
@@ -58,16 +58,16 @@ const Navbar = ({ openOverlay }) => {
       <div className="relative flex justify-center items-center w-full  2xl:w-[1280px] px-[15px] py-[20px] at500:px-[40px] my-0 mx-auto ">
         <div className="relative w-full mx-auto flex md:flex-row justify-between items-start md:items-center">
           <div className="relative flex justify-start items-start  text-white text-2xl font-bold mb-2 md:mb-0">
-            <FadeLink to="/">
+            <Link to="/">
               {scrolled ? (
                 <img src={logo2} alt="logo" className="h-auto w-[130px]" />
               ) : (
                 <img src={logo} alt="logo" className="h-auto  w-[130px]" />
               )}
-            </FadeLink>
+            </Link>
           </div>
 
-          <ul className="hidden silver:flex justify-end items-center space-x-4 ">
+          <ul className="hidden silver:flex justify-end items-start space-x-4 ">
             <li className="relative flex flex-col gap-[10px] group">
               <span
                 className={`relative flex gap-[10px] items-center py-[10px] pr-[10px] ${
@@ -87,17 +87,17 @@ const Navbar = ({ openOverlay }) => {
                 </span>
               </span>
               <div className="dropdown cursor-pointer z-[30] absolute top-[38px] w-[230px] font-normal divide-gray-100 rounded-[2px] shadow dark:bg-[#EEF8FF] hidden group-hover:block">
-                <ul className="flex flex-col ">
-                  <li className="flex justify-center items-center w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
-                    <FadeLink to="/about-finchglow-travels">
-                      <span className="text-[#05284C]">Who we are </span>
-                    </FadeLink>
-                  </li>
-                  <li className="flex justify-center items-center w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
-                    <FadeLink to="/finchglow-travels-story">
+                <ul className="flex justify-start items-start flex-col ">
+                  <Link className="w-full" to="/about-finchglow-travels">
+                    <li className="flex justify-start items-start text-left w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
+                      <span className="text-[#05284C] ">Who we are </span>
+                    </li>
+                  </Link>
+                  <Link className="w-full" to="/finchglow-travels-story">
+                    <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C]">Our story</span>
-                    </FadeLink>
-                  </li>
+                    </li>
+                  </Link>
                 </ul>
               </div>
             </li>
@@ -108,7 +108,7 @@ const Navbar = ({ openOverlay }) => {
                   scrolled ? "text-[#05284C]" : "text-white"
                 }`}
               >
-                <FadeLink to="/our-services">Services</FadeLink>
+                <Link to="/our-services">Services</Link>
                 <span className="cursor-pointer">
                   <SlArrowDown
                     size={13}
@@ -122,62 +122,58 @@ const Navbar = ({ openOverlay }) => {
               </span>
               <div className="dropdown cursor-pointer absolute top-[38px] w-[230px] font-normal divide-gray-100 rounded-[2px] shadow dark:bg-[#EEF8FF] hidden group-hover:block">
                 <ul className="flex flex-col ">
-                  <li className="flex justify-center items-center w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7]">
-                    <FadeLink
-                      to="/affiliate-programme"
-                      className="flex w-full px-4"
-                    >
+                  <Link to="/affiliate-programme" className="flex w-full">
+                    <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7]">
                       <span className="text-[#05284C]">Affiliate Programs</span>
-                    </FadeLink>
-                  </li>
-                  <li className="flex justify-center items-center w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
-                    <FadeLink
-                      to="/Corporate-travel-management"
-                      className="flex w-full px-4"
-                    >
+                    </li>
+                  </Link>
+
+                  <Link
+                    to="/Corporate-travel-management"
+                    className="flex w-full"
+                  >
+                    <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C]">
                         Corporate Travel Management
                       </span>
-                    </FadeLink>
-                  </li>
-                  <li className="flex justify-center items-center w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
-                    <FadeLink
-                      to="/customised-travel-packages"
-                      className="flex w-full px-4"
-                    >
+                    </li>
+                  </Link>
+
+                  <Link
+                    to="/customised-travel-packages"
+                    className="flex w-full "
+                  >
+                    <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C]">
                         Customised Travel Packages
                       </span>
-                    </FadeLink>
-                  </li>
-                  <li className="flex justify-center items-center w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
-                    <FadeLink
-                      to="/ancillary-services"
-                      className="flex w-full px-4"
-                    >
+                    </li>
+                  </Link>
+
+                  <Link to="/ancillary-services" className="flex w-full ">
+                    <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C]">Ancillary Services</span>
-                    </FadeLink>
-                  </li>
-                  <li className="flex justify-center items-center w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
-                    <FadeLink
-                      to="/visa-and-immigration-services"
-                      className="flex w-full px-4"
-                    >
+                    </li>
+                  </Link>
+
+                  <Link
+                    to="/visa-and-immigration-services"
+                    className="flex w-full "
+                  >
+                    <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C]">
                         Visa and Immigration Services
                       </span>
-                    </FadeLink>
-                  </li>
-                  <li className="flex justify-center items-center w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
-                    <FadeLink
-                      to="/partnerplus-connect"
-                      className="flex w-full px-4"
-                    >
+                    </li>
+                  </Link>
+
+                  <Link to="/partnerplus-connect" className="flex w-full ">
+                    <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C]">
                         PartnerPlus Connect
                       </span>
-                    </FadeLink>
-                  </li>
+                    </li>
+                  </Link>
                 </ul>
               </div>
             </li>
@@ -185,13 +181,13 @@ const Navbar = ({ openOverlay }) => {
             {/* <li
               className={`py-[10px] px-[10px] hover:border-b-[5px] hover:border-b-[#81B0F7] ${activeLink === "blog" ? "border-b-[5px] border-b-[#81B0F7]" : ""} ${scrolled ? "text-[#05284C]" : "text-white"}`}
             >
-              <FadeLink to="/">Blog</FadeLink>
+              < Link  to="/">Blog</ Link >
             </li> */}
 
             <li
               className={`py-[10px] px-[10px] hover:border-b-[5px] hover:border-b-[#81B0F7] ${activeLink === "contact" ? "border-b-[5px] border-b-[#81B0F7]" : ""} ${scrolled ? "text-[#05284C]" : "text-white"}`}
             >
-              <FadeLink to="/contact-us">Contact us</FadeLink>
+              <Link to="/contact-us">Contact us</Link>
             </li>
 
             <li className="py-[10px] w-[230px] pl-[18px]">
@@ -283,8 +279,8 @@ const Navbar = ({ openOverlay }) => {
                   }`}
                 >
                   <ul className="flex flex-col">
-                    <li className="flex justify-center items-center w-full py-[7px] px-[10px]  group dark:hover:bg-[#E6EFFD] hover:border-l-[3px] hover:border-l-[#81B0F7] text-change">
-                      <FadeLink to="/about-finchglow-travels">
+                    <Link className="flex w-full" to="/about-finchglow-travels">
+                      <li className="flex justify-center items-center w-full py-[7px] px-[10px]  group dark:hover:bg-[#E6EFFD] hover:border-l-[3px] hover:border-l-[#81B0F7] text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -292,10 +288,11 @@ const Navbar = ({ openOverlay }) => {
                         >
                           Who We are
                         </span>
-                      </FadeLink>
-                    </li>
-                    <li className="flex justify-center items-center w-full py-[7px] px-[10px]  group dark:hover:bg-[#E6EFFD] hover:border-l-[3px] hover:border-l-[#81B0F7] text-change">
-                      <FadeLink to="/finchglow-travels-story">
+                      </li>
+                    </Link>
+
+                    <Link className="flex w-full" to="/finchglow-travels-story">
+                      <li className="flex justify-center items-center w-full py-[7px] px-[10px]  group dark:hover:bg-[#E6EFFD] hover:border-l-[3px] hover:border-l-[#81B0F7] text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -303,8 +300,8 @@ const Navbar = ({ openOverlay }) => {
                         >
                           Our story
                         </span>
-                      </FadeLink>
-                    </li>
+                      </li>
+                    </Link>
                   </ul>
                 </div>
               </li>
@@ -315,7 +312,7 @@ const Navbar = ({ openOverlay }) => {
                     scrolled ? "text-[#05284C]" : "text-white"
                   }`}
                 >
-                  <FadeLink to="/our-services">Services</FadeLink>
+                  <Link to="/our-services">Services</Link>
                   <span
                     className={`cursor-pointer z-40 border-solid border-[1px]  rounded-sm p-[2px] ${
                       scrolled ? "border-[#000]" : "border-white"
@@ -345,8 +342,8 @@ const Navbar = ({ openOverlay }) => {
                   }`}
                 >
                   <ul className="flex flex-col">
-                    <li className="flex justify-center items-center w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
-                      <FadeLink to="/affiliate-programme">
+                    <Link className="flex w-full" to="/affiliate-programme">
+                      <li className="flex justify-start items-start w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -354,10 +351,13 @@ const Navbar = ({ openOverlay }) => {
                         >
                           Affiliate Programs
                         </span>
-                      </FadeLink>
-                    </li>
-                    <li className="flex justify-center items-center w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
-                      <FadeLink to="/Corporate-travel-management">
+                      </li>
+                    </Link>
+                    <Link
+                      className="flex w-full"
+                      to="/Corporate-travel-management"
+                    >
+                      <li className="flex justify-start items-start w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -365,10 +365,13 @@ const Navbar = ({ openOverlay }) => {
                         >
                           Corporate Travel Management
                         </span>
-                      </FadeLink>
-                    </li>
-                    <li className="flex justify-center items-center w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
-                      <FadeLink to="/customised-travel-packages">
+                      </li>
+                    </Link>
+                    <Link
+                      className="flex w-full"
+                      to="/customised-travel-packages"
+                    >
+                      <li className="flex justify-start items-start w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -376,10 +379,10 @@ const Navbar = ({ openOverlay }) => {
                         >
                           Customised Travel Packages
                         </span>
-                      </FadeLink>
-                    </li>
-                    <li className="flex justify-center items-center w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
-                      <FadeLink to="/ancillary-services">
+                      </li>
+                    </Link>
+                    <Link className="flex w-full" to="/ancillary-services">
+                      <li className="flex justify-start items-start w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -387,10 +390,13 @@ const Navbar = ({ openOverlay }) => {
                         >
                           Ancillary Services
                         </span>
-                      </FadeLink>
-                    </li>
-                    <li className="flex justify-center items-center w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
-                      <FadeLink to="/visa-and-immigration-services">
+                      </li>
+                    </Link>
+                    <Link
+                      className="flex w-full"
+                      to="/visa-and-immigration-services"
+                    >
+                      <li className="flex justify-start items-start w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -398,10 +404,10 @@ const Navbar = ({ openOverlay }) => {
                         >
                           Visa and Immigration Services
                         </span>
-                      </FadeLink>
-                    </li>
-                    <li className="flex justify-center items-center w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
-                      <FadeLink to="/partnerplus-connect">
+                      </li>
+                    </Link>
+                    <Link className="flex w-full" to="/partnerplus-connect">
+                      <li className="flex justify-start items-start w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -409,8 +415,8 @@ const Navbar = ({ openOverlay }) => {
                         >
                           PartnerPlus Connect
                         </span>
-                      </FadeLink>
-                    </li>
+                      </li>
+                    </Link>
                   </ul>
                 </div>
               </li>
@@ -418,14 +424,15 @@ const Navbar = ({ openOverlay }) => {
               {/* <li
                 className={`w-full py-[10px] px-[10px] hover:border-l-[3px] hover:text-[#05284C] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] ${scrolled ? "text-[#05284C]" : "text-white"}`}
               >
-                <FadeLink to="/">Blog</FadeLink>
+                < Link  to="/">Blog</ Link >
               </li> */}
-
-              <li
-                className={`w-full py-[10px] px-[10px] hover:border-l-[3px] hover:text-[#05284C] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] ${scrolled ? "text-[#05284C]" : "text-white"}`}
-              >
-                <FadeLink to="/contact-us">Contact us</FadeLink>
-              </li>
+              <Link className="flex w-full" to="/contact-us">
+                <li
+                  className={`w-full py-[7px] px-[10px] hover:border-l-[3px] hover:text-[#05284C] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] ${scrolled ? "text-[#05284C]" : "text-white"}`}
+                >
+                  <span className=""> Contact us</span>
+                </li>
+              </Link>
 
               <li className="py-[10px] w-full pl-[10px]">
                 <span className="flex  space-x-3">

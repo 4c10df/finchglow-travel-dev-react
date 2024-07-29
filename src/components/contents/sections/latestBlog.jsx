@@ -2,8 +2,9 @@ import React from "react";
 import Image1 from "../image/blog/image1-min.jpeg";
 import Image2 from "../image/blog/image2-min.jpeg";
 import Icon from "../image/blog/icon/Icon wrap-min.png";
-import FadeLink from "../fadeLink";
+import { Link } from "react-router-dom";
 import Button from "../Button";
+import LoadBlurHashImage from "../../lazy/loadBlurHash";
 
 const LatestBlogSection = () => {
   return (
@@ -17,16 +18,21 @@ const LatestBlogSection = () => {
           <span className="txt3 !text-[#375370] lg:w-[336.59px]">
             The latest industry news, interviews, technologies, and resources.
           </span>
-          <FadeLink to="/blog">
+          <Link to="/blog">
             <Button size="cdn" className="">
               View all posts
             </Button>
-          </FadeLink>
+          </Link>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-start w-full gap-[20px] mb-[30px]">
           <div className="w-full flex flex-col overflow-hidden gap-[20px]">
             <div className="h-[287px] w-full">
-              <img src={Image1} alt="" className="w-full h-full object-cover" />
+              <LoadBlurHashImage
+                src={Image1}
+                blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                className="w-full h-full object-cover"
+                alt="Affiliate Programs"
+              />
             </div>
 
             <div className="flex flex-col justify-start items-start w-full gap-[20px]">
@@ -43,7 +49,7 @@ const LatestBlogSection = () => {
                 >
                   Bill Walsh leadership lessons
                 </h5>
-                <FadeLink to="/">
+                <Link to="/">
                   <span className="arrow">
                     <img
                       className="relative hover:right-[-6px] w-[24px] h-[24px] object-contain "
@@ -51,7 +57,7 @@ const LatestBlogSection = () => {
                       alt="arrow up"
                     />
                   </span>
-                </FadeLink>
+                </Link>
               </div>
               <span data-aos="fade-up" className="txt5 text-[#667085]">
                 Like to know the secrets of transforming a 2-14 team into a 3x
@@ -62,7 +68,12 @@ const LatestBlogSection = () => {
 
           <div className="w-full flex flex-col overflow-hidden gap-[20px]">
             <div className="h-[287px] w-full">
-              <img src={Image2} alt="" className="w-full h-full object-cover" />
+              <LoadBlurHashImage
+                src={Image2}
+                blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                className="w-full h-full object-cover"
+                alt="Affiliate Programs"
+              />
             </div>
 
             <div className="flex flex-col justify-start items-start w-full gap-[20px]">
@@ -79,7 +90,7 @@ const LatestBlogSection = () => {
                 >
                   PM mental models
                 </h5>
-                <FadeLink to="/">
+                <Link to="/">
                   <span className="arrow">
                     <img
                       className="relative hover:right-[-6px] w-[24px] h-[24px] object-contain "
@@ -87,7 +98,7 @@ const LatestBlogSection = () => {
                       alt="arrow up"
                     />
                   </span>
-                </FadeLink>
+                </Link>
               </div>
               <span data-aos="fade-up" className="txt5 text-[#667085]">
                 Mental models are simple expressions of complex processes or

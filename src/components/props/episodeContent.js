@@ -3,13 +3,13 @@
 // in the rating u can reduce thr amont of starts given if you want just change the number
 // if u incounter any problem like error when inputting content with punctuation mark, ensure you change this ('') to ("")
 // and make sure there are no space whwn inputting <br>
-import episodeImage1 from '../slideEpisode/image 1.jpg';
-import episodeImage2 from '../slideEpisode/image 2.jpg';
-import episodeImage3 from '../slideEpisode/image 3.jpg';
-import episodeImage4 from '../slideEpisode/image 4.jpg';
-import episodeImage5 from '../slideEpisode/image 5.png';
-import episodeImage6 from '../slideEpisode/image 6.jpg';
-import episodeImage7 from '../slideEpisode/image 7.jpg';
+import episodeImage1 from '../slideEpisode/image 1-min.jpg';
+import episodeImage2 from '../slideEpisode/image 2-min.jpg';
+import episodeImage3 from '../slideEpisode/image 3-min.jpg';
+import episodeImage4 from '../slideEpisode/image 4-min.jpg';
+import episodeImage5 from '../slideEpisode/image 5-min.png';
+import episodeImage6 from '../slideEpisode/image 6-min.jpg';
+import episodeImage7 from '../slideEpisode/image 7-min.jpg';
 
 
 const episodes = [

@@ -8,7 +8,7 @@ import Image1 from "../contents/image/postImage 1.webp";
 import Image2 from "../contents/image/postImage 2.webp";
 import Image3 from "../contents/image/postImage 3.webp";
 import Icon from "./blog-img/arrow-up.png";
-import FadeLink from "../contents/fadeLink";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -133,13 +133,13 @@ const BlogSlide = () => {
                   Building your API Stack
                 </h5>
                 <span className="relative w-[24px] h-[28px] cursor-pointer">
-                  <FadeLink to="/">
+                  <Link to="/">
                     <img
                       className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out"
                       src={Icon}
                       alt="arrow up"
                     />
-                  </FadeLink>
+                  </Link>
                 </span>
               </div>
 

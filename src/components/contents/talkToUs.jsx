@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import FadeLink from "./fadeLink";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -54,7 +54,7 @@ function TalkToUs(props) {
               data-aos="fade-up"
               className="flex flex-col items-center justify-center  h-auto "
             >
-              {/* <FadeLink to={props.pageLink} onClick={props.signUP}>
+              {/* < Link  to={props.pageLink} onClick={props.signUP}>
                 <Button
                   size="cdn"
                   onClick={() => window.scrollTo({ bottom: 0, behavior: "smooth" })}
@@ -62,15 +62,15 @@ function TalkToUs(props) {
                 >
                   {props.buttz}
                 </Button>
-              </FadeLink> */}
-              <FadeLink to="/contact-us?scrollTo=getinTouchSection">
+              </ Link > */}
+              <Link to="/contact-us?scrollTo=getinTouchSection">
                 <Button
                   size="cdn"
                   className={` ${isAffiliatePage | ispartnerPage ? "!hidden" : ""}`}
                 >
                   {props.buttz}
                 </Button>
-              </FadeLink>
+              </Link>
 
               <Button
                 size="cdn"

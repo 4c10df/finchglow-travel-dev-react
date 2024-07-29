@@ -4,7 +4,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "../image/5d4133d9be427e7c6bf664f0496f3e76.webp";
 import icon from "../image/icons/arrow-up-min.png";
-import FadeLink from "../fadeLink";
+import { Link } from "react-router-dom";
+import LoadBlurHashImage from "../../lazy/loadBlurHash";
 
 const SectionPartner = () => {
   useEffect(() => {
@@ -32,19 +33,20 @@ const SectionPartner = () => {
               Bridging knowledge gaps for travel agents' success navigation.
             </span>
 
-            <FadeLink to="/partnerplus-connect">
+            <Link to="/partnerplus-connect">
               <span className="arrow !text-[#0260EE]">
                 Learn more
                 <img src={icon} alt="" />
               </span>
-            </FadeLink>
+            </Link>
           </div>
 
           <div className="relative flex flex-col justify-center items-end w-full">
-            <img
+            <LoadBlurHashImage
               src={Image}
-              className=" bg-gray-500 w-full h-[300px] lg:w-[447px] lg:h-[656px] object-cover"
-              alt=""
+              blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+              className="w-full h-[300px] lg:w-[447px] lg:h-[656px] object-cover"
+              alt="Affiliate Programs"
             />
           </div>
         </div>

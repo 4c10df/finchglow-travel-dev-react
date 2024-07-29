@@ -1,4 +1,5 @@
 import React from "react";
+import LoadBlurHashImage from "../lazy/loadBlurHash";
 
 function EpisodesSlide(props) {
   return (
@@ -73,10 +74,11 @@ function EpisodesSlide(props) {
         </div>
 
         <div className="flex flex-col justify-center items-center w-full lg:w-[555px] bg-[#D4E8F6] gap-[10px] p-[15px] sm:px-[50px] sm:py-[30px]">
-          <img
+          <LoadBlurHashImage
             src={props.imgURL}
-            className="w-full h-auto object-cover"
-            alt=""
+            blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+            className="w-full h-auto lg:w-[455px] lg:h-[440px] object-cover"
+            alt="episodes"
           />
           <span
             data-aos="fade-up"

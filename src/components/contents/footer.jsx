@@ -10,7 +10,7 @@ import {
 import logo from "./image/logo/FT_logo_X5-01.png";
 import logo1 from "./image/logo/Accredited Agent logo.png";
 import logo2 from "./image/logo/NDPR.png";
-import { Link } from "react-router-dom";
+import Link from "./link";
 
 import "../contents/styles/_footer.css";
 

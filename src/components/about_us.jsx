@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "./contents/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Nav from "./navigation/nav"; // Correct import statement

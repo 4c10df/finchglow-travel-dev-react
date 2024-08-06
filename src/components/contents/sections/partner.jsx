@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "../image/5d4133d9be427e7c6bf664f0496f3e76.webp";
 import icon from "../image/icons/arrow-up-min.png";
-import { Link } from "react-router-dom";
+import Link from "../link";
 import LoadBlurHashImage from "../../lazy/loadBlurHash";
 
 const SectionPartner = () => {

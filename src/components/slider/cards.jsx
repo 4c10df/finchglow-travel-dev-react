@@ -16,7 +16,7 @@ import "./swiper/cards.css";
 import "./swiper/pagination.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import Link from "../contents/link";
 
 const Slideshow = () => {
   const swiper = useSwiper();

@@ -21,7 +21,7 @@ function TicketingSupport(props) {
   return (
     <section className="relative bg-[#EEF5FF] flex flex-col justify-center items-center w-full h-auto lgh-[294.67px] overflow-hidden z-[2] lg:overflow-visible">
       <div className="static w-[95%] flex flex-col justify-center items-center 2xl:w-[1280px] px-[15px] py-[70px] at500:px-[64px] md:pr-[64px] md:pl-[94px] my-0 mx-auto">
-        <div className="flex flex-col-reverse lg:flex-row justify-between w-full h-auto">
+        <div className="flex flex-col-reverse silver:flex-row justify-between gap-[20px] w-full h-auto">
           <div className="relative flex flex-col justify-center items-start gap-[20px] w-full h-auto text-left">
             <h3 className="text-[#05284C] mb-[20px]">{props.title}</h3>
 
@@ -174,12 +174,11 @@ function TicketingSupport(props) {
             </div>
           </div>
 
-          <div className="relative flex justify-end items-center w-full h-auto mb-[30px] lg:mb-0 overflow-hidden">
-            
+          <div className="relative flex justify-center silver:justify-end items-center w-full h-auto mb-[30px] lg:mb-0 overflow-hidden">
             <LoadBlurHashImage
               src={props.imgURL1}
               blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
-              className="w-full lg:w-[478px] h-[300px] lg:h-[561px] object-cover"
+              className="w-full lg:!w-[478px]  lg:!h-[561px] object-cover"
               alt="Affiliate Programs"
             />
           </div>

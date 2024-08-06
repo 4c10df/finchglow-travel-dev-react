@@ -17,19 +17,20 @@ import AncillaryServices from "./components/page/ancillary";
 import OurVisaService from "./components/page/ourVisa";
 import PartnerplusConnect from "./components/page/parterPlus";
 import BlogPost from "./components/page/blogPostStack";
+import PageTitle from "./components/pageTitle/pageTitle";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <Helmet>
-          <title>Nigeria’s Leading Travel Consolidator</title>
-          <meta
-            name="description"
-            content="Experience the world with our trusted travel consolidator services. Over 18 years of expertise in connecting travelers with the best flights, hotels, and packages. Reliable, efficient, and customer-focused."
-          />
-        </Helmet>
+       
+        <PageTitle
+          title="Nigeria’s Leading Travel Consolidator"
+          description="Experience the world with our trusted travel consolidator services. Over 18 years of expertise in connecting travelers with the best flights, hotels, and packages. Reliable, efficient, and customer-focused."
+          keywords="keyword1"
+        />
+        
         <App />
       </>
     ),

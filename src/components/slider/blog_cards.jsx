@@ -8,7 +8,7 @@ import Image1 from "../contents/image/postImage 1.webp";
 import Image2 from "../contents/image/postImage 2.webp";
 import Image3 from "../contents/image/postImage 3.webp";
 import Icon from "./blog-img/arrow-up.png";
-import { Link } from "react-router-dom";
+import Link from "../contents/link";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

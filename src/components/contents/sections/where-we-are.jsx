@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import ImageLayer from "../image/Vector squre.webp";
 import ImageMap from "../image/Layer_1.webp";
 import icon from "../image/icons/arrow-up-min.png";
-import { Link } from "react-router-dom";
+import Link from "../link";
 import LoadBlurHashImage from "../../lazy/loadBlurHash";
 
 const SectionWhereWeAre = () => {

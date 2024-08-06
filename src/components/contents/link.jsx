@@ -4,7 +4,7 @@ import "../contents/styles/fadeLink.css"; // Ensure this is the correct path to 
 import { FiLoader } from "react-icons/fi";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-const FadeLink = ({ to, children, onClick }) => {
+const Link = ({ to, children, onClick }) => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -15,19 +15,19 @@ const FadeLink = ({ to, children, onClick }) => {
       navigate(to, { replace: false });
       window.scrollTo(0, 0); // Scroll to the top of the page
       setLoading(false);
-    }, 500); // 1 second delay
+    }, 100); // 1 second delay
     if (onClick) onClick();
   };
 
   return (
     <div
-      className={`fade-link w-full flex justify-start items-start ${loading ? "fade-out" : "fade-in"}`}
+      className={`fade-link  ${loading ? "fade-out" : "fade-in"}`}
     >
       <NavLink to={to} onClick={handleClick}>
         {children}
       </NavLink>
       {loading && (
-        <div className="overlay">
+        <div className="overlay ">
           {/* <div className="loading">
             <AiOutlineLoading3Quarters size={50} />
           </div> */}
@@ -37,4 +37,4 @@ const FadeLink = ({ to, children, onClick }) => {
   );
 };
 
-export default FadeLink;
+export default Link;

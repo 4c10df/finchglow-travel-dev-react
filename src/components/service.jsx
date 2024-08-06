@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "./contents/link";
 import Title from "./contents/title";
 import contents from "./props/contents";
 import Nav from "./navigation/nav";

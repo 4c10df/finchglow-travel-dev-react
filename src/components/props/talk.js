@@ -29,7 +29,7 @@ const talk = [
   },
   {
     id: 4,
-    title: "Ready to revolutionise your CorPorate travel experience?",
+    title: "Ready to revolutionise your Corporate travel experience?",
     details:
       "Let's embark on this transformation where you’ll experience unparalleled service and efficiency.",
     buttz: "Request A Proposal",

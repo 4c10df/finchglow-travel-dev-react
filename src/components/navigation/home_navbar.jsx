@@ -5,7 +5,7 @@ import { SlArrowUp, SlArrowDown, SlArrowRight } from "react-icons/sl";
 import Button from "../contents/Button";
 import logo from "./logos/finchglow-logo.png";
 import logo2 from "./logos/FT_logo_X5-01.png";
-import { Link } from "react-router-dom";
+import Link from "../contents/link";
 
 const Navbar = ({ openOverlay }) => {
   const [toggle, setToggle] = useState(false);
@@ -67,7 +67,7 @@ const Navbar = ({ openOverlay }) => {
             </Link>
           </div>
 
-          <ul className="hidden silver:flex justify-end items-start space-x-4 ">
+          <ul className="hidden silver:flex justify-end items-center space-x-4 ">
             <li className="relative flex flex-col gap-[10px] group">
               <span
                 className={`relative flex gap-[10px] items-center py-[10px] pr-[10px] ${
@@ -78,7 +78,7 @@ const Navbar = ({ openOverlay }) => {
                 <span className="cursor-pointer">
                   <SlArrowDown
                     size={13}
-                    className={`${scrolled ? "text-[#05284C]" : "text-white"} group-hover:hidden`}
+                    className={`${scrolled ? "text-[#05284C]" : "text-white"}  group-hover:hidden`}
                   />
                   <SlArrowUp
                     size={13}
@@ -86,14 +86,14 @@ const Navbar = ({ openOverlay }) => {
                   />
                 </span>
               </span>
-              <div className="dropdown cursor-pointer z-[30] absolute top-[38px] w-[230px] font-normal divide-gray-100 rounded-[2px] shadow dark:bg-[#EEF8FF] hidden group-hover:block">
-                <ul className="flex justify-start items-start flex-col ">
-                  <Link className="w-full" to="/about-finchglow-travels">
+              <div className="dropdown cursor-pointer absolute top-[38px] w-[230px] font-normal rounded-[2px] shadow bg-[#EEF8FF] hidden group-hover:block z-[9999]">
+                <ul className="flex flex-col  ">
+                  <Link to="/about-finchglow-travels" className="flex w-full">
                     <li className="flex justify-start items-start text-left w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C] ">Who we are </span>
                     </li>
                   </Link>
-                  <Link className="w-full" to="/finchglow-travels-story">
+                  <Link to="/finchglow-travels-story" className="flex w-full">
                     <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C]">Our story</span>
                     </li>
@@ -120,7 +120,7 @@ const Navbar = ({ openOverlay }) => {
                   />
                 </span>
               </span>
-              <div className="dropdown cursor-pointer absolute top-[38px] w-[230px] font-normal divide-gray-100 rounded-[2px] shadow dark:bg-[#EEF8FF] hidden group-hover:block">
+              <div className="dropdown cursor-pointer absolute top-[38px] w-[230px] font-normal rounded-[2px] shadow bg-[#EEF8FF] hidden group-hover:block z-[9999]">
                 <ul className="flex flex-col ">
                   <Link to="/affiliate-programme" className="flex w-full">
                     <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7]">
@@ -167,13 +167,13 @@ const Navbar = ({ openOverlay }) => {
                     </li>
                   </Link>
 
-                  <Link to="/partnerplus-connect" className="flex w-full ">
+                  {/* <Link to="/partnerplus-connect" className="flex w-full ">
                     <li className="flex justify-start items-start w-full py-[7px] px-[10px] dark:hover:bg-[#CCDFFC] hover:border-l-[3px] hover:border-l-[#81B0F7] ">
                       <span className="text-[#05284C]">
                         PartnerPlus Connect
                       </span>
                     </li>
-                  </Link>
+                  </Link> */}
                 </ul>
               </div>
             </li>
@@ -190,21 +190,21 @@ const Navbar = ({ openOverlay }) => {
               <Link to="/contact-us">Contact us</Link>
             </li>
 
-            <li className="py-[10px] w-[230px] pl-[18px]">
+            <li className="py-[10px] w-[330px] pl-[18px]">
               <span className="flex  space-x-3">
                 <Button
                   size="medium"
                   onClick={handleButtonClick}
-                  className={`border-[1px] border-solid border-[#F48487]  ${scrolled ? "text-[#05284C] " : "text-white "} `}
+                  className={`border-[1px] border-solid capitalize border-[#F48487]  ${scrolled ? "text-[#05284C] " : "text-white "} `}
                 >
                   Log in
                 </Button>
                 <Button
                   size="medium"
                   onClick={openOverlay}
-                  className={`border-[1px] border-solid bg-[#05284C] border-[#0260EE] text-white  ${scrolled ? "" : " "} `}
+                  className={`border-[1px] border-solid capitalize bg-[#05284C] border-[#0260EE] text-white  ${scrolled ? "" : " "} `}
                 >
-                  Sign up
+                  Partner Signup
                 </Button>
               </span>
             </li>
@@ -245,13 +245,13 @@ const Navbar = ({ openOverlay }) => {
             <ul className="flex flex-col justify-start items-start w-full py-[20px] px-[15px] at500:px-[20px] md:px-[79px] space-y-2">
               <li className="relative flex flex-col justify-start items-start gap-[10px] w-full">
                 <span
-                  className={`relative flex justify-between w-full gap-[10px] items-center hover:border-l-[3px] hover:border-l-[#81B0F7] hover:text-[#05284C] dark:hover:bg-[#E6EFFD] py-[7px] px-[10px] ${
+                  className={`relative group flex justify-between w-full gap-[10px] items-center hover:border-l-[3px] hover:border-l-[#81B0F7] hover:text-[#05284C] dark:hover:bg-[#E6EFFD] py-[7px] px-[10px] ${
                     scrolled ? "text-[#05284C]" : "text-white"
                   }`}
                 >
                   <span>About us</span>
                   <span
-                    className={`cursor-pointer z-40 border-solid border-[1px]  rounded-sm p-[2px] ${
+                    className={`cursor-pointer z-40 border-solid border-[1px] group-hover:border-[#000] rounded-sm p-[2px] ${
                       scrolled ? "border-[#000]" : "border-white"
                     }`}
                     onClick={() => toggleDropdown(0)}
@@ -259,14 +259,14 @@ const Navbar = ({ openOverlay }) => {
                     {isDropdownOpen[0] ? (
                       <SlArrowDown
                         size={13}
-                        className={`${
+                        className={`group-hover:text-[#05284C] ${
                           scrolled ? "text-[#05284C]" : "text-white"
                         } `}
                       />
                     ) : (
                       <SlArrowRight
                         size={13}
-                        className={`${
+                        className={`group-hover:text-[#05284C] ${
                           scrolled ? "text-[#05284C]" : "text-white"
                         } `}
                       />
@@ -280,7 +280,7 @@ const Navbar = ({ openOverlay }) => {
                 >
                   <ul className="flex flex-col">
                     <Link className="flex w-full" to="/about-finchglow-travels">
-                      <li className="flex justify-center items-center w-full py-[7px] px-[10px]  group dark:hover:bg-[#E6EFFD] hover:border-l-[3px] hover:border-l-[#81B0F7] text-change">
+                      <li className="flex justify-start items-start w-full py-[7px] px-[10px]  group dark:hover:bg-[#E6EFFD] hover:border-l-[3px] hover:border-l-[#81B0F7] text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -292,7 +292,7 @@ const Navbar = ({ openOverlay }) => {
                     </Link>
 
                     <Link className="flex w-full" to="/finchglow-travels-story">
-                      <li className="flex justify-center items-center w-full py-[7px] px-[10px]  group dark:hover:bg-[#E6EFFD] hover:border-l-[3px] hover:border-l-[#81B0F7] text-change">
+                      <li className="flex justify-start items-start w-full py-[7px] px-[10px]  group dark:hover:bg-[#E6EFFD] hover:border-l-[3px] hover:border-l-[#81B0F7] text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
                             scrolled ? "text-[#05284C]" : "text-white"
@@ -308,13 +308,13 @@ const Navbar = ({ openOverlay }) => {
 
               <li className="relative flex flex-col justify-start items-start gap-[10px] w-full">
                 <span
-                  className={`relative flex justify-between w-full gap-[10px] items-center hover:border-l-[3px] hover:border-l-[#81B0F7] hover:text-[#05284C] dark:hover:bg-[#E6EFFD] py-[7px] px-[10px] ${
+                  className={`relative flex justify-between w-full group gap-[10px] items-center hover:border-l-[3px] hover:border-l-[#81B0F7] hover:text-[#05284C] dark:hover:bg-[#E6EFFD] py-[7px] px-[10px] ${
                     scrolled ? "text-[#05284C]" : "text-white"
                   }`}
                 >
                   <Link to="/our-services">Services</Link>
                   <span
-                    className={`cursor-pointer z-40 border-solid border-[1px]  rounded-sm p-[2px] ${
+                    className={`cursor-pointer z-40 border-solid border-[1px] group-hover:border-[#000]  rounded-sm p-[2px] ${
                       scrolled ? "border-[#000]" : "border-white"
                     }`}
                     onClick={() => toggleDropdown(1)}
@@ -322,14 +322,14 @@ const Navbar = ({ openOverlay }) => {
                     {isDropdownOpen[1] ? (
                       <SlArrowDown
                         size={13}
-                        className={`${
+                        className={`group-hover:text-[#05284C] ${
                           scrolled ? "text-[#05284C]" : "text-white"
                         } `}
                       />
                     ) : (
                       <SlArrowRight
                         size={13}
-                        className={`${
+                        className={`group-hover:text-[#05284C] ${
                           scrolled ? "text-[#05284C]" : "text-white"
                         } `}
                       />
@@ -337,11 +337,11 @@ const Navbar = ({ openOverlay }) => {
                   </span>
                 </span>
                 <div
-                  className={`dropdown cursor-pointer  w-full font-normal ${
+                  className={`dropdown cursor-pointer  w-full font-normal z-[9999] ${
                     isDropdownOpen[1] ? "block" : "hidden"
                   }`}
                 >
-                  <ul className="flex flex-col">
+                  <ul className="flex flex-col ">
                     <Link className="flex w-full" to="/affiliate-programme">
                       <li className="flex justify-start items-start w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
                         <span
@@ -406,7 +406,7 @@ const Navbar = ({ openOverlay }) => {
                         </span>
                       </li>
                     </Link>
-                    <Link className="flex w-full" to="/partnerplus-connect">
+                    {/* <Link className="flex w-full" to="/partnerplus-connect">
                       <li className="flex justify-start items-start w-full py-[7px] px-[10px] border-soild hover:border-l-[3px] dark:hover:bg-[#E6EFFD] hover:border-l-[#81B0F7] group text-change">
                         <span
                           className={`group-hover:text-[#05284C] ${
@@ -416,7 +416,7 @@ const Navbar = ({ openOverlay }) => {
                           PartnerPlus Connect
                         </span>
                       </li>
-                    </Link>
+                    </Link> */}
                   </ul>
                 </div>
               </li>
@@ -439,16 +439,16 @@ const Navbar = ({ openOverlay }) => {
                   <Button
                     size="medium"
                     onClick={handleButtonClick}
-                    className={`border-[1px] border-solid border-[#F48487]  ${scrolled ? "text-[#05284C] " : "text-white "} `}
+                    className={`border-[1px] border-solid border-[#F48487] capitalize  ${scrolled ? "text-[#05284C] " : "text-white "} `}
                   >
                     Log in
                   </Button>
                   <Button
                     size="medium"
                     onClick={openOverlay}
-                    className={`border-[1px] border-solid bg-[#05284C] border-[#0260EE] text-white  ${scrolled ? "" : " "} `}
+                    className={`border-[1px] border-solid bg-[#05284C] capitalize border-[#0260EE] text-white  ${scrolled ? "" : " "} `}
                   >
-                    Sign up
+                    Partner Signup
                   </Button>
                 </span>
               </li>

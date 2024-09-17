@@ -4,7 +4,7 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import { SlArrowUp, SlArrowDown, SlArrowRight } from "react-icons/sl";
 import Button from "../contents/Button"; // Ensure this is the correct import statement
 import logo from "./logos/FT_logo_X5-01.png"; // Ensure this is the correct path
-import Link from "../contents/link"
+import Link from "../contents/link";
 import { useLocation } from "react-router-dom";
 
 const Nav = ({ openOverlay }) => {
@@ -208,13 +208,13 @@ const Nav = ({ openOverlay }) => {
                 </ul>
               </div>
             </li>
-            {/* < Link  to="/"> 
-            <li
-              className={`py-[10px] px-[10px] hover:border-b-[5px] text-[#05284C] hover:border-b-[#81B0F7] ${activeLink === "blog" ? "border-b-[5px] border-b-[#81B0F7]" : ""}`}
-            >
-             Blog
-            </li>
-            </ Link > */}
+            <Link to="/blog-home">
+              <li
+                className={`py-[10px] px-[10px] hover:border-b-[5px] text-[#05284C] hover:border-b-[#81B0F7] ${activeLink === "blog" ? "border-b-[5px] border-b-[#81B0F7]" : ""}`}
+              >
+                <span className="text-[#05284C]"> Blog</span>
+              </li>
+            </Link>
             <Link to="/contact-us">
               <li
                 className={`py-[10px] px-[10px] hover:border-b-[5px] text-[#05284C] hover:border-b-[#81B0F7] ${activeLink === "contact-us" ? "border-b-[5px] border-b-[#81B0F7]" : ""}`}
@@ -475,15 +475,13 @@ const Nav = ({ openOverlay }) => {
                 </div>
               </li>
 
-              {/*< Link  to="/">
-               <li
-                className={`relative flex dark:hover:bg-[#CCDFFC]  justify-between w-full gap-[10px] items-center hover:border-l-[3px] hover:border-l-[#81B0F7] hover:text-[#05284C] py-[7px] px-[10px] ${activeLink === "blog" ? "border-l-[3px] border-l-[#81B0F7]" : ""}`}
-              >
-                
+              <Link to="/blog-home">
+                <li
+                  className={`relative flex dark:hover:bg-[#CCDFFC]  justify-between w-full gap-[10px] items-center hover:border-l-[3px] hover:border-l-[#81B0F7] hover:text-[#05284C] py-[7px] px-[10px] ${activeLink === "blog" ? "border-l-[3px] border-l-[#81B0F7]" : ""}`}
+                >
                   <span className="text-[#05284C]">Blog</span>
-               
-              </li>
-               </ Link > */}
+                </li>
+              </Link>
               <Link className="flex w-full" to="/contact-us">
                 <li
                   className={` relative flex dark:hover:bg-[#CCDFFC]  justify-between w-full gap-[10px] items-center hover:border-l-[3px] hover:border-l-[#81B0F7] hover:text-[#05284C] py-[7px] px-[10px] ${activeLink === "contact-us" ? "border-l-[3px] border-l-[#81B0F7]" : ""}`}
@@ -519,4 +517,3 @@ const Nav = ({ openOverlay }) => {
 };
 
 export default Nav;
-

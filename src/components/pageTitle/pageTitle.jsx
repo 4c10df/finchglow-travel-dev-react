@@ -1,14 +1,13 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const PageTitle = ({ title, description, keywords }) => {
+const PageTitle = ({ title, description }) => {
   const location = useLocation();
 
   useEffect(() => {
-    // Update the document title
     document.title = title;
 
-    // Update meta tags
+    // Update or create meta description tag
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = description || "";
@@ -18,26 +17,17 @@ const PageTitle = ({ title, description, keywords }) => {
       newMetaDescription.content = description || "";
       document.head.appendChild(newMetaDescription);
     }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.content = keywords || "";
-    } else {
-      const newMetaKeywords = document.createElement("meta");
-      newMetaKeywords.name = "keywords";
-      newMetaKeywords.content = keywords || "";
-      document.head.appendChild(newMetaKeywords);
-    }
-  }, [location, title, description, keywords]);
+  }, [location, title, description]);
 
   return null;
 };
 
 export default PageTitle;
 
-
-{/* <PageTitle
+{
+  /* <PageTitle
   title="My Page Title"
   description="This is a description of the page."
   keywords="keyword1, keyword2, keyword3"
-/>; */}
+/>; */
+}

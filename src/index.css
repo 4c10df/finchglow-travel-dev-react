@@ -90,7 +90,7 @@ h4 {
 h5 {
   font-size: 20px;
   line-height: 32px;
-  font-weight: 700;
+  font-weight: 700 ;
   font-family: 'Goldplay', sans-serif;  
 }
 
@@ -131,7 +131,7 @@ h6 {
 
 .txt5 {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 500 !important;
   line-height: 24px;
   font-family: 'Goldplay', sans-serif;  
 }
@@ -163,6 +163,26 @@ p {
   font-weight: 400;
   font-family: 'Goldplay', sans-serif;  
 
+}
+.blogDetail{
+  p{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start; */
+    font-weight: 500 !important;
+    font-family: 'Goldplay', sans-serif;
+    width: 100% !important;
+    overflow: hidden;
+  
+  }
+}
+.latestBlog {
+  p {
+    font-weight: 500 !important;
+    font-family: 'Goldplay', sans-serif;
+
+  }
 }
 
 /* for all the arrow buttons */

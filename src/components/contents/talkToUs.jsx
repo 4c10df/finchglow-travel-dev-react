@@ -91,7 +91,6 @@ function TalkToUs(props) {
           </div>
         </div>
       </div>
-      <OverlayForm isOpen={isOpen} closeOverlay={closeOverlay} />
     </section>
   );
 }

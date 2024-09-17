@@ -1,12 +1,9 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import ErrorPage from "../errorMessage/errorPage";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
-import { useSwiper } from "swiper/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import Image1 from "../contents/image/postImage 1.webp";
-import Image2 from "../contents/image/postImage 2.webp";
-import Image3 from "../contents/image/postImage 3.webp";
 import Icon from "./blog-img/arrow-up.png";
 import Link from "../contents/link";
 import "swiper/css";
@@ -19,244 +16,118 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const BlogSlide = () => {
-  const swiper = useSwiper();
+  const [posts, setPosts] = useState([]);
+  const [hasError, setHasError] = useState(false);
+  const [postLimit, setPostLimit] = useState();
+
+  useEffect(() => {
+    axios
+      .get("https://absolutgaming.net/wp-json/wp/v2/posts?_embed&author")
+      .then((response) => {
+        setPosts(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching posts:", error);
+        setHasError(true);
+      });
+  }, []);
 
   useEffect(() => {
     AOS.init({ duration: 3000, once: true });
   }, []);
 
+  if (hasError) {
+    return <ErrorPage />;
+  }
+
   return (
-    <div className=" blog-container w-full flex flex-col items-start overflow-hidden lg:overflow-visible">
+    <div className="blog-container w-full flex flex-col items-start overflow-hidden lg:overflow-visible">
       <Swiper
-        className=" relative flex flex-col sm:!py-[30px] !overflow-visible"
+        className="relative flex flex-col sm:!py-[30px] !overflow-visible"
         style={{ width: "100%" }}
         modules={[Navigation, Pagination, A11y]}
         spaceBetween={25}
         slidesPerView={3}
         breakpoints={{
-          0: {
-            slidesPerView: 1,
-          },
-          520: {
-            slidesPerView: 2,
-          },
-          950: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+          0: { slidesPerView: 1 },
+          520: { slidesPerView: 2 },
+          950: { slidesPerView: 3 },
+          1024: { slidesPerView: 3 },
         }}
         navigation={{
           nextEl: ".swiper-button-next-blog",
           prevEl: ".swiper-button-prev-blog",
         }}
-        // pagination={{ clickable: true }}
       >
-        <SwiperSlide className=" md:right-[-8px] z-[4]">
-          <div className=" bg-[#E6EFFD] overflow-hidden rounded-b-[14px]">
-            <div className="h-[320px] w-full">
-              <img src={Image1} alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex flex-col justify-start items-start w-full gap-[20px] p-[30px]">
-              <span className="txt4 text-[#0260EE] leading-[24px]">Blog</span>
-              <div className="flex justify-between items-center w-full gap-[4px] hover:gap-[12px]">
-                <h5 className="text-[#101828] !leading-[30px] w-[268px]">
-                  How to effectively price for your tickets
-                </h5>
-                {/* <div data-aos="fade-up" className="relative w-[24px] h-[28px] cursor-pointer">
-                      <img className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out" src={Icon} alt="arrow up" />
-                  </div> */}
-                <a
-                  href="#"
-                  className="relative w-[24px] h-[28px] cursor-pointer"
-                >
+        {posts.slice(0, postLimit).map((post) => (
+          <SwiperSlide key={post.id} className="md:right-[-8px] z-[4]">
+            <div className="flex flex-col  gap-[20px]  bg-[#E6EFFD] overflow-hidden rounded-b-[14px]">
+              <div className="flex flex-col relative w-full overflow-hidden">
+                {post._embedded["wp:featuredmedia"] && (
                   <img
-                    className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out"
-                    src={Icon}
-                    alt="arrow up"
+                    src={
+                      post._embedded["wp:featuredmedia"][0].media_details.sizes
+                        .full.source_url
+                    }
+                    alt={
+                      post._embedded["wp:featuredmedia"][0].alt_text ||
+                      post.title.rendered
+                    }
+                    style={{
+                      maxWidth: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
                   />
-                </a>
+                )}
               </div>
-              <span className="txt5 text-[#667085]">
-                How do you create compelling presentations that wow your
-                colleagues...
-              </span>
-            </div>
-          </div>
-        </SwiperSlide>
+              <Link
+                to={`/blog/${post.slug}`}
+                className="flex flex-col overflow-hidden gap-[20px] "
+              >
+                <div className="flex flex-col justify-center w-full p-[30px]">
+                  <p
+                    data-aos="fade-up"
+                    className="txt4 text-[#0260EE] leading-[24px]"
+                  >
+                    {post._embedded.author[0].name} •{" "}
+                    {new Date(post.date).toLocaleDateString()}
+                  </p>
 
-        <SwiperSlide className=" md:right-[-8px] z-[4]">
-          <div className=" bg-[#E6EFFD] overflow-hidden rounded-b-[14px]">
-            <div className="h-[370px] w-full">
-              <img src={Image2} alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex flex-col justify-start items-start w-full gap-[20px] p-[30px]">
-              <span className="txt4 text-[#0260EE] leading-[24px]">
-                Industry Insight
-              </span>
-              <div className="flex justify-between items-center w-full gap-[4px] hover:gap-[12px]">
-                <h5 className="text-[#101828] !leading-[30px] w-[268px]">
-                  Migrating to automated platform for bookings
-                </h5>
-                {/* <div data-aos="fade-up" className="relative w-[24px] h-[28px] cursor-pointer">
-                      <img className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out" src={Icon} alt="arrow up" />
-                  </div> */}
-                <a
-                  href="#"
-                  className="relative w-[24px] h-[28px] cursor-pointer"
-                >
-                  <img
-                    className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out"
-                    src={Icon}
-                    alt="arrow up"
-                  />
-                </a>
-              </div>
-              <span className="txt5 text-[#667085]">
-                Linear helps streamline software projects, sprints, tasks, and
-                bug tracking. Here’s how to get started.
-              </span>
-            </div>
-          </div>
-        </SwiperSlide>
+                  <div className="flex justify-between items-start w-full">
+                    <h5
+                      data-aos="fade-up"
+                      className="text-[#101828] !leading-[25px] ip8:w-[268px]"
+                    >
+                      {post.title.rendered}
+                    </h5>
+                    <span data-aos="fade-up" className="arrow">
+                      <img
+                        className="relative group-hover:right-[-6px] h-auto object-cover"
+                        src={Icon}
+                        alt="arrow up"
+                      />
+                    </span>
+                  </div>
 
-        <SwiperSlide className=" md:right-[-8px] z-[4]">
-          <div className=" bg-[#E6EFFD] overflow-hidden rounded-b-[14px]">
-            <div className="h-[320px] w-full">
-              <img src={Image3} alt="" className="w-full h-full object-cover" />
+                  <span
+                    data-aos="fade-up"
+                    className="txt5 !font-medium text-[#667085]"
+                    dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+                  ></span>
+                </div>
+              </Link>
             </div>
-            <div className="flex flex-col justify-start items-start w-full gap-[20px] p-[30px]">
-              <span className="txt4 text-[#0260EE] leading-[24px]">Blog</span>
-              <div className="flex justify-between items-center w-full gap-[4px] hover:gap-[12px]">
-                <h5 className="text-[#101828] !leading-[30px] w-[268px]">
-                  Building your API Stack
-                </h5>
-                <span className="relative w-[24px] h-[28px] cursor-pointer">
-                  <Link to="/">
-                    <img
-                      className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out"
-                      src={Icon}
-                      alt="arrow up"
-                    />
-                  </Link>
-                </span>
-              </div>
-
-              <span className="txt5 text-[#667085]">
-                The rise of RESTful APIs has been met by a rise in tools for
-                creating, testing, and managing them.
-              </span>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className=" md:right-[-8px] z-[4]">
-          <div className=" bg-[#E6EFFD] overflow-hidden rounded-b-[14px]">
-            <div className="h-[320px] w-full">
-              <img src={Image1} alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex flex-col justify-start items-start w-full gap-[20px] p-[30px]">
-              <span className="txt4 text-[#0260EE] leading-[24px]">Blog</span>
-              <div className="flex justify-between items-center w-full gap-[4px] hover:gap-[12px]">
-                <h5 className="text-[#101828] !leading-[30px] w-[268px]">
-                  How to effectively price for your tickets
-                </h5>
-                {/* <div data-aos="fade-up" className="relative w-[24px] h-[28px] cursor-pointer">
-                      <img className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out" src={Icon} alt="arrow up" />
-                  </div> */}
-                <a
-                  href="#"
-                  className="relative w-[24px] h-[28px] cursor-pointer"
-                >
-                  <img
-                    className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out"
-                    src={Icon}
-                    alt="arrow up"
-                  />
-                </a>
-              </div>
-              <span className="txt5 text-[#667085]">
-                How do you create compelling presentations that wow your
-                colleagues...
-              </span>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className=" md:right-[-8px] z-[4]">
-          <div className=" bg-[#E6EFFD] overflow-hidden rounded-b-[14px]">
-            <div className="h-[320px] w-full">
-              <img src={Image3} alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex flex-col justify-start items-start w-full gap-[20px] p-[30px]">
-              <span className="txt4 text-[#0260EE] leading-[24px]">Blog</span>
-              <div className="flex justify-between items-center w-full gap-[4px] hover:gap-[12px]">
-                <h5 className="text-[#101828] !leading-[30px] w-[268px]">
-                  Building your API Stack
-                </h5>
-                {/* <div data-aos="fade-up" className="relative w-[24px] h-[28px] cursor-pointer">
-                      <img className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out" src={Icon} alt="arrow up" />
-                  </div> */}
-                <a
-                  href="#"
-                  className="relative w-[24px] h-[28px] cursor-pointer"
-                >
-                  <img
-                    className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out"
-                    src={Icon}
-                    alt="arrow up"
-                  />
-                </a>
-              </div>
-              <span className="txt5 text-[#667085]">
-                The rise of RESTful APIs has been met by a rise in tools for
-                creating, testing, and managing them.
-              </span>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className=" md:right-[-8px] z-[4]">
-          <div className=" bg-[#E6EFFD] overflow-hidden rounded-b-[14px]">
-            <div className="h-[320px] w-full">
-              <img src={Image1} alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex flex-col justify-start items-start w-full gap-[20px] p-[30px]">
-              <span className="txt4 text-[#0260EE] leading-[24px]">Blog</span>
-              <div className="flex justify-between items-center w-full gap-[4px] hover:gap-[12px]">
-                <h5 className="text-[#101828] !leading-[30px] w-[268px]">
-                  How to effectively price for your tickets
-                </h5>
-                {/* <div data-aos="fade-up" className="relative w-[24px] h-[28px] cursor-pointer">
-                      <img className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out" src={Icon} alt="arrow up" />
-                  </div> */}
-                <a
-                  href="#"
-                  className="relative w-[24px] h-[28px] cursor-pointer"
-                >
-                  <img
-                    className="relative hover:right-[-6px] w-[11px] transition-all duration-75 ease-in-out"
-                    src={Icon}
-                    alt="arrow up"
-                  />
-                </a>
-              </div>
-              <span className="txt5 text-[#667085]">
-                How do you create compelling presentations that wow your
-                colleagues...
-              </span>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
 
-      <div className="relative  flex  !justify-end !items-end w-full !gap-2 max-w-[1280px] px-[15px] pt-[30px] at500:px-[10px] my-0 mx-auto ">
-        <div className="next !float-right p-2 ">
-          <FaArrowLeft className="swiper-button-prev-blog !relative !left-[-3px] !top-0 !text-[#05284C] hover:!text-[#05284C] !w-[20px]" />
+      <div className="relative flex justify-end items-end w-full gap-2 max-w-[1280px] px-[15px] pt-[30px] at500:px-[10px] my-0 mx-auto">
+        <div className="next p-2">
+          <FaArrowLeft className="swiper-button-prev-blog relative left-[-3px] top-0 text-[#05284C] hover:text-[#05284C] w-[20px]" />
         </div>
-        <div className="prev float-right p-2">
-          <FaArrowRight className="swiper-button-next-blog !relative !text-[#05284C] !top-0 hover:!text-[#05284C] !w-[20px]" />
+        <div className="prev p-2">
+          <FaArrowRight className="swiper-button-next-blog relative text-[#05284C] top-0 hover:text-[#05284C] w-[20px]" />
         </div>
       </div>
     </div>

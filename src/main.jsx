@@ -18,19 +18,18 @@ import OurVisaService from "./components/page/ourVisa";
 import PartnerplusConnect from "./components/page/parterPlus";
 import BlogPost from "./components/page/blogPostStack";
 import PageTitle from "./components/pageTitle/pageTitle";
+import PostDetail from "./components/API/blogDetail";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-       
         <PageTitle
           title="Nigeria’s Leading Travel Consolidator"
           description="Experience the world with our trusted travel consolidator services. Over 18 years of expertise in connecting travelers with the best flights, hotels, and packages. Reliable, efficient, and customer-focused."
-          keywords="keyword1"
         />
-        
+
         <App />
       </>
     ),
@@ -78,6 +77,15 @@ const router = createBrowserRouter([
           />
         </Helmet>
         <Blog />
+      </>
+    ),
+  },
+  {
+    path: "/blog/:slug",
+    element: (
+      <>
+        
+        <BlogPost />
       </>
     ),
   },
@@ -210,21 +218,6 @@ const router = createBrowserRouter([
           />
         </Helmet>
         <PartnerplusConnect />
-      </>
-    ),
-  },
-  {
-    path: "blog-read",
-    element: (
-      <>
-        <Helmet>
-          <title>Blog Read | Finchglow Travels</title>
-          <meta
-            name="description"
-            content="This is the meta description for this page"
-          />
-        </Helmet>
-        <BlogPost />
       </>
     ),
   },
